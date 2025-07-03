@@ -41,8 +41,11 @@ window.onscroll = () =>{
     navbar.classList.remove('active');
 
     let footer = document.querySelector('footer');
+    const buffer = 5; // tolerance for rounding errors
+    const scrolledBottom = window.innerHeight + window.scrollY;
+    const fullHeight = document.documentElement.scrollHeight;
 
-    footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
+    footer.classList.toggle('show-animate', scrolledBottom >= fullHeight - buffer);
 }
 
  

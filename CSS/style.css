@@ -163,7 +163,7 @@ section{
 
 .btn-box .btn{
     position : relative;
-    display : inline-block;
+    display : inline-flex;
     justify-content: center;
     align-items: center;
     width : 15rem;
@@ -708,7 +708,7 @@ span{
 
 .logo .animate, .navbar .animate, #menu-icon .animate, .home.show-animate .animate{
     animation : showRight 1s ease forwards;
-    animation-delay : calc(.3s * var(--i));
+    animation-delay : calc(.1s * var(--i));
 }
 
 .animate.scroll{
@@ -730,7 +730,7 @@ section:nth-child(odd) .animate.scroll,.footer .animate.scroll{
 .skills.show-animate .animate.scroll,
 .contact.show-animate .animate.scroll,
 .footer.show-animate .animate.scroll{
-    transition-delay : calc(.3s * var(--i));
+    transition-delay : calc(.1s * var(--i));
     width : 0;
 }
 
@@ -905,12 +905,15 @@ section:nth-child(odd) .animate.scroll,.footer .animate.scroll{
 
 @keyframes homeCursorText{
     0%,10%,100%{
-        
+        width : 0;
+    }
+
+    65%,78%,85%{
+        width : 100%;
         opacity : 1;
     }
 
     75%,81%{
-        width : 100%;
         opacity : 0;
     }
 }
