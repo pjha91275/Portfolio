@@ -88,7 +88,7 @@ section{
     display : flex;
     align-items : center;
     padding: 0 9%;
-    background: url('/images/about.jpg') no-repeat;
+    background: url(/images/home.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -223,7 +223,7 @@ section{
 
 .home-sci a {
     position : relative;
-    display : inline-block;
+    display : inline-flex;
     justify-content: center;
     align-items : center;
     width : 40px;
@@ -264,13 +264,13 @@ section{
     right : 0;
     width :45%;
     height : 100%;
-    background : transparent;
+    background: transparent;
     transition : 3s;
 }
 
 .home-imgHover:hover{
-    background: var(--bg-color);
     opacity : .8;
+    background : var(--bg-color);
 }
 
 .about{
