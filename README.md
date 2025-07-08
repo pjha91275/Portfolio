@@ -1,5 +1,5 @@
 ## 🚀 Live Demo
-[Click to View](https://pjha91275.github.io/Amazon-Clone/)
+[Click to View](https://pjha91275.github.io/portfolio/)
 
 ## 🛑 Browser Warning Notice
 
