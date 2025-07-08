@@ -15,3 +15,11 @@ To proceed and view the site:
 4. Click that underlined text to open the site normally.
 
 ---
+## 📌 Status
+✅ Project Currently Incomplete (HTML + CSS + Javascript only)
+
+---
+
+## ✍️ Author
+**Prince Jha**
+
