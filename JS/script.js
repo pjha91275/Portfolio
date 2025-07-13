@@ -48,5 +48,20 @@ window.onscroll = () =>{
     footer.classList.toggle('show-animate', scrolledBottom >= fullHeight - buffer);
 }
 
- 
+const roles = ["Computer Engineering Student", "Aspiring Web Developer"];
+let currentRole = 0;
+const roleElement = document.getElementById("animated-role");
+
+function changeRole() {
+    roleElement.classList.remove("typing");
+    setTimeout(() => {
+        currentRole = (currentRole + 1) % roles.length;
+        roleElement.textContent = roles[currentRole];
+        roleElement.classList.add("typing");
+    }, 300); 
+}
+
+
+roleElement.classList.add("typing");
+setInterval(changeRole, 4000);
 
