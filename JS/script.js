@@ -1,5 +1,3 @@
-alert("Portfolio is still under construction!");
-
 //toggle icon navbar
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
@@ -13,7 +11,6 @@ menuIcon.onclick = ()=>{
 
 //scroll section 
 let sections = document.querySelectorAll('section');
-console.log(sections)
 let navLinks = document.querySelectorAll('header nav a');
 
 window.onscroll = () =>{
@@ -23,7 +20,7 @@ window.onscroll = () =>{
       let height = sec.offsetHeight;
       let id = sec.getAttribute('id');
 
-      if(top >= offset && top < offset + height + 100){
+      if(top >= offset && top < offset + height){
         navLinks.forEach(links =>{
             links.classList.remove('active');
             document.querySelector('header nav a[href*=' + id + ']').classList.add('active');  
@@ -34,6 +31,15 @@ window.onscroll = () =>{
         else{
           sec.classList.remove('show-animate');
       }
+
+      let lastSection = sections[sections.length - 1];
+let scrollBottom = window.scrollY + window.innerHeight;
+let pageHeight = document.documentElement.scrollHeight;
+
+if (scrollBottom >= pageHeight - 10) {
+  lastSection.classList.add('show-animate');
+}
+
 });
 
     let header = document.querySelector('header');
@@ -56,14 +62,18 @@ const roleElement = document.getElementById("animated-role");
 
 function changeRole() {
     roleElement.classList.remove("typing");
+
     setTimeout(() => {
         currentRole = (currentRole + 1) % roles.length;
         roleElement.textContent = roles[currentRole];
+
+        void roleElement.offsetWidth;
+
         roleElement.classList.add("typing");
-    }, 300); 
+    }, 3000); 
 }
 
-
 roleElement.classList.add("typing");
-setInterval(changeRole, 4000);
+
+setInterval(changeRole, 5600);
 

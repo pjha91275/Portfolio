@@ -112,7 +112,7 @@ section{
 
 .home-content .text-animate{
    position : relative;
-   width : 32.8rem; 
+   width : 39.8rem; 
 }
 
 .typing {
@@ -127,7 +127,7 @@ section{
    background-image: linear-gradient(var(--main-color),var(--main-color));
    background-repeat: no-repeat;
    -webkit-background-clip: text;
-   background-position : -33rem 0;
+   background-size : 0% 100%;
 }
 
 .home.show-animate .home-content .text-animate h3{
@@ -220,7 +220,7 @@ section{
 .home-sci{
     position : absolute;
     bottom : 4rem;
-    width : 170px;
+    width : 200px;
     display : flex;
     justify-content : space-between;
 }
@@ -376,8 +376,8 @@ span{
 .education-column .title{
   position : relative;
   display : inline-block;
-  font-size: 2.5rem;
-  margin : 0 0 1.5rem 2rem;
+  font-size: 2rem;
+  margin : 0 0 1.2rem 2rem;
 }
 
 .education-column .education-box{
@@ -403,7 +403,7 @@ span{
 
 .education-content .content{
     position : relative;
-    padding : 1.5rem;
+    padding : 1.2rem;
     border : .2rem solid var(--main-color);
     border-radius: .6rem;
     margin-bottom: 2rem;
@@ -427,7 +427,7 @@ span{
 }
 
 .education-content .content .year{
-    font-size : 1.5rem;
+    font-size : 1.2rem;
     color : var(--main-color);
     padding-bottom: .5rem;
 }
@@ -437,12 +437,17 @@ span{
 }
 
 .education-content .content h3{
-    font-size : 2rem;
+    font-size : 1.6rem;
 }
 
 .education-content .content p{
-    font-size : 1.6rem;
+    font-size : 1.25rem;
     padding-top : .5rem;
+}
+
+.education-content .content p a{
+    color : var(--main-color);
+    font-weight : 500;
 }
 
 .skills{
@@ -504,7 +509,7 @@ span{
 }
 
 .skills-content .progress {
-    padding : 1rem 0;
+    padding : 0.7rem 0;
 }
 
 .skills-content .progress h3{
@@ -521,8 +526,8 @@ span{
     height : 2.5rem;
     border-radius : .6rem;
     border : .2rem solid var(--main-color);
-    padding : .5rem;
-    margin : 1rem 0;
+    padding : .35rem;
+    margin : 0.7rem 0;
 }
 
 .skills-content .progress .bar span{
@@ -871,7 +876,7 @@ section:nth-child(odd) .animate.scroll,.footer .animate.scroll{
     }
 
     .home-sci{
-        width : 160px;
+        width : 185px;
     }
 
     .home-sci a{
@@ -919,6 +924,15 @@ section:nth-child(odd) .animate.scroll,.footer .animate.scroll{
     .home-content h1{
         font-size : 5rem;
     }
+
+    .home-content .text-animate {
+    width: 36.8rem;
+    }
+
+    .home-content .text-animate {
+    position: relative;
+    width: 36.8rem;
+    }
 }
 
 @keyframes typingAnimation {
@@ -934,11 +948,11 @@ section:nth-child(odd) .animate.scroll,.footer .animate.scroll{
 
 @keyframes homeBgText{
     0%,10%,100%{
-        background-position : -33rem 0;
+        background-size : 0% 100%;
     }
 
     65%,85%{
-        background-position : 0 0;
+        background-size : 100% 100%;
     }
 }
 
@@ -967,8 +981,4 @@ section:nth-child(odd) .animate.scroll,.footer .animate.scroll{
     100%{
         width : 0%;
     }
-}
-
-.contact{
-    padding-bottom : 5rem;
 }
