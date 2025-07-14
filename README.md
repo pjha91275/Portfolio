@@ -1,5 +1,5 @@
 ## 🚀 Live Demo
-[Click to View](https://pjha91275.github.io/portfolio/)
+[Click to View](https://pjha91275.github.io/Portfolio/)
 
 ## 🛑 Browser Warning Notice
 
