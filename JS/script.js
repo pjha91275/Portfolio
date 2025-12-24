@@ -1,79 +1,78 @@
 //toggle icon navbar
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+let menuIcon = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
 
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle("bx-x");
+  navbar.classList.toggle("active");
+};
 
-menuIcon.onclick = ()=>{
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active'); 
-}
+//scroll section
+let sections = document.querySelectorAll("section");
+let navLinks = document.querySelectorAll("header nav a");
 
+window.onscroll = () => {
+  sections.forEach((sec) => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 100;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute("id");
 
-//scroll section 
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach((links) => {
+        links.classList.remove("active");
+        document
+          .querySelector("header nav a[href*=" + id + "]")
+          .classList.add("active");
+      });
+      sec.classList.add("show-animate");
+    } else {
+      sec.classList.remove("show-animate");
+    }
 
-window.onscroll = () =>{
-    sections.forEach(sec =>{
-      let top = window.scrollY;
-      let offset = sec.offsetTop -100;  
-      let height = sec.offsetHeight;
-      let id = sec.getAttribute('id');
+    let lastSection = sections[sections.length - 1];
+    let scrollBottom = window.scrollY + window.innerHeight;
+    let pageHeight = document.documentElement.scrollHeight;
 
-      if(top >= offset && top < offset + height){
-        navLinks.forEach(links =>{
-            links.classList.remove('active');
-            document.querySelector('header nav a[href*=' + id + ']').classList.add('active');  
-        });
-        sec.classList.add('show-animate');
+    if (scrollBottom >= pageHeight - 10) {
+      lastSection.classList.add("show-animate");
+    }
+  });
 
-      }
-        else{
-          sec.classList.remove('show-animate');
-      }
+  let header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 100);
 
-      let lastSection = sections[sections.length - 1];
-let scrollBottom = window.scrollY + window.innerHeight;
-let pageHeight = document.documentElement.scrollHeight;
+  menuIcon.classList.remove("bx-x");
+  navbar.classList.remove("active");
 
-if (scrollBottom >= pageHeight - 10) {
-  lastSection.classList.add('show-animate');
-}
+  let footer = document.querySelector("footer");
+  const buffer = 5; // tolerance for rounding errors
+  const scrolledBottom = window.innerHeight + window.scrollY;
+  const fullHeight = document.documentElement.scrollHeight;
 
-});
+  footer.classList.toggle(
+    "show-animate",
+    scrolledBottom >= fullHeight - buffer
+  );
+};
 
-    let header = document.querySelector('header');
-    header.classList.toggle('sticky',window.scrollY > 100);
-
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
-
-    let footer = document.querySelector('footer');
-    const buffer = 5; // tolerance for rounding errors
-    const scrolledBottom = window.innerHeight + window.scrollY;
-    const fullHeight = document.documentElement.scrollHeight;
-
-    footer.classList.toggle('show-animate', scrolledBottom >= fullHeight - buffer);
-}
-
-const roles = ["Computer Engineering Student", "Aspiring Web Developer"];
+const roles = ["2nd year Computer Engineering Student", "Full-Stack Web Development Enthusiast"];
 let currentRole = 0;
 const roleElement = document.getElementById("animated-role");
 
 function changeRole() {
-    roleElement.classList.remove("typing");
+  roleElement.classList.remove("typing");
 
-    setTimeout(() => {
-        currentRole = (currentRole + 1) % roles.length;
-        roleElement.textContent = roles[currentRole];
+  setTimeout(() => {
+    currentRole = (currentRole + 1) % roles.length;
+    roleElement.textContent = roles[currentRole];
 
-        void roleElement.offsetWidth;
+    void roleElement.offsetWidth;
 
-        roleElement.classList.add("typing");
-    }, 3000); 
+    roleElement.classList.add("typing");
+  }, 3000);
 }
 
 roleElement.classList.add("typing");
 
 setInterval(changeRole, 5600);
-
