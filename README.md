@@ -1,5 +1,5 @@
 ## 🚀 Live Demo
-[Click to View](https://pjha91275.github.io/portfolio/)
+[Click to View](https://pjha91275.github.io/Portfolio/)
 
 ## 🛑 Browser Warning Notice
 
@@ -16,7 +16,7 @@ To proceed and view the site:
 
 ---
 ## 📌 Status
-✅ Project Currently Incomplete (HTML + CSS + Javascript only)
+✅ Project Completed (HTML + CSS + Javascript only)
 
 ---
 
