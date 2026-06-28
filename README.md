@@ -3,7 +3,7 @@
 Welcome to the repository of my personal portfolio website. This project serves as a showcase of my education, technical skillset, tools, full-stack projects, and programming journey.
 
 > [!NOTE]
-> **🚀 Live Demo:** [Click to view the deployed website on Vercel](https://prince-jha.vercel.app/)
+> **🚀 Live Demo:** [Click to view the deployed website on Vercel](https://princejha.vercel.app)
 
 ---
 
