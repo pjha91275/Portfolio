@@ -76,3 +76,41 @@ function changeRole() {
 roleElement.classList.add("typing");
 
 setInterval(changeRole, 5600);
+
+// Outdated Portfolio Notice Banner logic
+document.addEventListener("DOMContentLoaded", () => {
+  const notice = document.getElementById("portfolio-notice");
+  const closeBtn = document.getElementById("close-notice");
+
+  function updateNoticeHeight() {
+    if (notice && notice.offsetHeight > 0 && document.body.classList.contains("notice-active")) {
+      document.documentElement.style.setProperty("--notice-height", `${notice.offsetHeight}px`);
+    } else {
+      document.documentElement.style.setProperty("--notice-height", "0px");
+    }
+  }
+
+  // Show banner with a slight delay for a smooth slide-down animation
+  setTimeout(() => {
+    if (notice) {
+      notice.classList.add("show");
+      updateNoticeHeight();
+      window.addEventListener("resize", updateNoticeHeight);
+    }
+  }, 800);
+
+  // Close banner behavior
+  if (closeBtn && notice) {
+    closeBtn.addEventListener("click", () => {
+      notice.classList.remove("show");
+      document.body.classList.remove("notice-active");
+      document.documentElement.style.setProperty("--notice-height", "0px");
+
+      // Clean up window resize listener and fully hide banner after transition
+      window.removeEventListener("resize", updateNoticeHeight);
+      setTimeout(() => {
+        notice.style.display = "none";
+      }, 400);
+    });
+  }
+});

@@ -998,3 +998,104 @@ section:nth-child(odd) .animate.scroll,
     width: 0%;
   }
 }
+
+/* --- Outdated Portfolio Notice Top Banner --- */
+.portfolio-top-notice {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(17, 46, 66, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 0.2rem solid var(--main-color);
+  padding: 1.5rem 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  z-index: 1005;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+.portfolio-top-notice.show {
+  transform: translateY(0);
+}
+
+.notice-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.notice-icon {
+  font-size: 2.8rem;
+  color: var(--main-color);
+  flex-shrink: 0;
+}
+
+.notice-text {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.notice-text strong {
+  color: var(--main-color);
+  font-weight: 600;
+}
+
+.notice-btn {
+  background: var(--main-color);
+  color: var(--bg-color);
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.6rem;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s;
+  flex-shrink: 0;
+}
+
+.notice-btn:hover {
+  background: transparent;
+  color: var(--main-color);
+}
+
+/* Adjust header and sections when notice is visible */
+.header {
+  transition: top 0.4s ease, background 0.3s ease;
+}
+
+body.notice-active .header {
+  top: var(--notice-height, 0px);
+}
+
+body.notice-active .home {
+  padding-top: calc(var(--notice-height, 0px));
+}
+
+@media (max-width: 991px) {
+  .portfolio-top-notice {
+    padding: 1.2rem 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-top-notice {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 1.2rem;
+  }
+  .notice-content {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .notice-btn {
+    width: 100%;
+  }
+}
